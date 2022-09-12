@@ -1,5 +1,4 @@
 import express from 'express';
-import moment from 'moment';
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));

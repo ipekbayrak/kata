@@ -15,10 +15,14 @@
   },
   "devDependencies": {
     "nodemon": "2.0.6",
+    "npm-run-all": "^4.1.5",
     "standard": "^16.0.4"
   },
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "npm-run-all -p -r decisionMock accountingMock mainServer",
+    "decisionMock": "node decisionEngineMockServer.js",
+    "accountingMock": "node accountingSoftwareMockServer.js", 
+    "mainServer": "nodemon server/index.js",
     "lint": "./node_modules/.bin/standard",
     "lint-fix": "./node_modules/.bin/standard --fix"
   },
