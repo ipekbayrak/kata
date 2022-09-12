@@ -14,6 +14,12 @@ const logout = async function () {
   })
     .then((response) => response.json())
     .then(function (data) {
+      window.localStorage.removeItem('token');
+      window.location.replace('http://localhost:3000/index.html');
+    })
+    .catch(function (error) {
+      console.error(error);
+      window.localStorage.removeItem('token');
       window.location.replace('http://localhost:3000/index.html');
     });
 };
