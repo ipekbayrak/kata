@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <meta name="description" content="KATA Excersize">
+        <meta name="keywords" content="accounting">
+        <meta name="author" content="ipekbayrak">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="application.js"></script>
+        <link rel="stylesheet" type="text/css" href="application.css" />
+    </header>
+    <body>
+        <button onclick="logout()" type="button">Logout</button>
+
+        <form>
+            <div class="container">
+              <h1>Request Outcome</h1>
+              <p>Business Details & Loan Amount</p>
+              <hr>
+          
+              <label for="companyName"><b>Name</b></label>
+              <input type="text" placeholder="Enter Company Name" name="companyName" id="companyName" required>
+          
+              <label for="establishDate"><b>Establish Date</b></label>
+              <input type="date" placeholder="Enter establish date" name="establishDate" id="establishDate" required>
+
+              <label for="loanAmount"><b>Loan Amount</b></label>
+              <input type="text" placeholder="Enter Loan Amount" name="loanAmount" id="loanAmount" required>
+              <hr>
+
+              <select id="accountingProvider" onchange="accountingProviderSelected()">
+                <option value="Xero">Xero</option>
+                <option value="MYOB">MYOB</option>
+              </select>
+
+
+              <label for="userToken"><b>Enter Your Accounting Provider 3th Party Auth Token</b></label>
+              <input type="text" placeholder="Enter Auth Token" name="userToken" id="userToken" required>
+              <hr>
+          
+              <button onclick="requestBalanceSheet()" type="button">Request Balance Sheet</button>
+              <div id="table">
+              </div>
+              <div id="concent" style="display: none;">
+                <p>Accept validity of given information</p>
+                <button onclick="accept()" type="button">Accept</button>
+              </div>
+              <button id="submit" onclick="decide()" type="button" style="display: none;">Submit</button>
+              <b id="result"></b>
+            </div>
+          </form>
+          <p id="notification"></p>
+    </body>
+</html>

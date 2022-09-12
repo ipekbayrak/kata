@@ -1,0 +1,44 @@
+{
+  "name": "kata",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.17",
+    "node-fetch": "^3.2.10",
+    "semistandard": "^16.0.1",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.6",
+    "standard": "^16.0.4"
+  },
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "lint": "./node_modules/.bin/standard",
+    "lint-fix": "./node_modules/.bin/standard --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "build/*"
+    ],
+    "env": [
+      "jest",
+      "es6",
+      "browser"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
